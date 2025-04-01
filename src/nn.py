@@ -50,11 +50,11 @@ class Network(object):
         tracking progress, but slows things down substantially."""
         if test_data: n_test = len(test_data)
         n = len(training_data)
-        for j in xrange(epochs):
+        for j in range(epochs):
             random.shuffle(training_data)
             mini_batches = [
                 training_data[k:k+mini_batch_size]
-                for k in xrange(0, n, mini_batch_size)
+                for k in range(0, n, mini_batch_size)
             ]
             for mini_batch in mini_batches:
                 self.update_mini_batch(mini_batch, eta)
