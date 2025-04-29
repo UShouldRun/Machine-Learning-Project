@@ -3,7 +3,6 @@ import random
 import pandas as pd
 import numpy as np
 
-#implementation found in site "geeks for geeks"
 
 def encode_class(mydata):
     classes = []
@@ -66,6 +65,7 @@ def calculateClassProbabilities(info, test):
             x = test[i]
             probabilities[classValue] *= calculateGaussianProbability(x, mean, std_dev)
     return probabilities
+
 def predict(info, test):
     probabilities = calculateClassProbabilities(info, test)
     bestLabel = max(probabilities, key=probabilities.get)
